@@ -32,6 +32,6 @@ c = Client()
 while 1:
     Text = input("")
     if Text.split(" ")[0].lower() == "!nick":
-        c.send({"Type": "Nick", "Value": Text.lower().replace("!nick", "")})
+        c.send({"Type": "Nick", "Value": Text.replace("!nick ", "").replace("!Nick ", "")})
     else:
         c.send({"Type": "Message", "Value": Text})

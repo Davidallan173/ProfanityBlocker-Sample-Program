@@ -18,6 +18,7 @@ class Client:
         Clients.append(self)
         self.readTask = threading.Thread(target=self.recvTsk, args=())
         self.readTask.start()
+        self.send({"Name": "SERVER", "Message": "Send '!Nick [Followed by a nickname] to set your name", "Type": "Message"})
 
     def recvTsk(self):
         while not self.CloseConnection:
